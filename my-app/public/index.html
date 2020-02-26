@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+
+<body>
+
+  <div id="app">
+    <v-app id="inspire">
+      <div class="text-center">
+        <v-chip class="ma-2">
+          Default
+        </v-chip>
+
+        <v-chip class="ma-2" color="primary">
+          Primary
+        </v-chip>
+
+        <v-chip class="ma-2" color="secondary">
+          Secondary
+        </v-chip>
+
+        <v-chip class="ma-2" color="red" text-color="white">
+          Red Chip
+        </v-chip>
+
+        <v-chip class="ma-2" color="green" text-color="white">
+          Green Chip
+        </v-chip>
+      </div>
+    </v-app>
+  </div>
+
+
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+
+    })
+  </script>
+</body>
+
+</html>
