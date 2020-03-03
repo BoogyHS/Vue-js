@@ -1,8 +1,11 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import Vue from 'vue';
 import FooterComponent from './index.vue';
 import { shallowMount } from '@vue/test-utils';
+import { mount } from '@vue/test-utils'
 
-const wrapper = shallowMount(FooterComponent)
+const wrapper = mount(FooterComponent)
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer
