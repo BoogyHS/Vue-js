@@ -41,7 +41,7 @@
           </div>
           <div class="content-container">
             <h3>Content preview</h3>
-            <div class="content-preview"></div>
+            <div v-html="content" class="content-preview"></div>
           </div>
         </section>
       </div>
@@ -94,10 +94,6 @@ body {
   text-align: center;
   color: #2c3e50;
 }
-
-/** ************************************** **/
-
-/** ************************************** **/
 
 /** ************************************** **/
 
@@ -286,6 +282,7 @@ select {
   font-size: 16px;
   font-family: inherit;
   text-align: center;
+  text-align-last: center;
 }
 
 select {
