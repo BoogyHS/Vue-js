@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3cd69e2433.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -14,7 +15,7 @@
     <header>
         <div class="mini-navbar-wrap">
             <div class="logo-wrap">
-                <a href="#" class="logo">Магеланци</a>
+                <a href="#" class="logo"><span class="logo">Магеланци</span></a>
             </div>
             <div class="mini-navbar">
                 <ul>
@@ -39,6 +40,7 @@
         </nav>
     </header>
 
+    <!-- homepage -->
     <div class="container">
         <div class="path">
             <span>Начало</span>
@@ -46,18 +48,40 @@
         </div>
         <main>
             <div class="theme-title">
-                <div class="nick-name">
-                    <p>Име</p>
+                <!-- welcome component -->
+                <div class="welcome">
+                    <h3>Добре дошли!</h3>
+                    <p>Magelanci.com е общество на хора, завладени от магията на пътешествията. От първоначалната тръпка
+                        до самолетния билет, планирането и самото пътуване – ние сме тук да си помагаме, споделяме и
+                        съпреживяваме.</p>
+                        <button>
+                            <i class="fas fa-sign-in-alt"></i>
+                            Вход
+                        </button>
+                        <button>
+                            <i class="fas fa-user-plus"></i>
+                            Регистрация
+                        </button>
                 </div>
-                <div class="theme-name">
-                    <h2>Tema</h2>
-                    <p><time>Дата</time></p>
-                </div>
-                <div class="followers">
-                    <p>Последователи</p>
+                <!-- theme component  -->
+                <div class="theme-name-wrapper">
+                    <div class="nick-name">
+                        <p>Име 1</p>
+                    </div>
+                    <div class="theme-name">
+                        <h2>Tema</h2>
+                        <p><time>Дата</time></p>
+                    </div>
+                    <div class="followers">
+                        <p>Последователи</p>
+                    </div>
                 </div>
             </div>
+            <!-- aside component  -->
             <div class="aside">
+                <div class="title">
+                    Последни мнения
+                </div>
                 <h3>Тема</h3>
                 <p>Име</p>
                 <p>последно преди: време</p>
