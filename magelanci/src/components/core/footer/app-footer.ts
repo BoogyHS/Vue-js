@@ -1,6 +1,6 @@
 
 export default {
-    name: 'App-Header',
+    name: 'Footer',
     components: {},
     props: [],
     data () {
