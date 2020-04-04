@@ -1,6 +1,6 @@
 
 export default {
-    name: 'Navbar',
+    name: 'App-Header',
     components: {},
     props: [],
     data () {
@@ -9,9 +9,6 @@ export default {
       }
     },
     computed: {
-  
-    },
-    mounted () {
   
     },
     methods: {
