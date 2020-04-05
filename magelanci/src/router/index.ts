@@ -1,26 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Register from '../components/register/Register.vue'
-import Login from '../components/login/Login.vue'
 import Home from '../components/home/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/Home',
+    path: '/home',
     name: 'Home',
+    component: Home
+  },
+  {
+    path: '/forum',
+    name: 'Forum',
     component: Home
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: () => import('../components/register/Register.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import('../components/login/Login.vue')
   },
   // {
   //   path: '/about',
@@ -33,6 +36,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

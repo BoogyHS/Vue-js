@@ -6,5 +6,6 @@ export default {
   components: {
     myPath,
     Theme,
-  }
+  },
+  
 }
