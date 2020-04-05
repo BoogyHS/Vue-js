@@ -1,7 +1,7 @@
 <div class="container">
-    <myPath/>
+    <myPath />
     <main>
-        <div class="theme-title">
+        <div class="main-width">
             <!-- welcome component -->
             <div class="welcome">
                 <h3>Добре дошли!</h3>
@@ -9,18 +9,24 @@
                     до самолетния билет, планирането и самото пътуване – ние сме тук да си помагаме, споделяме и
                     съпреживяваме.</p>
                 <div class="logged">
-                    <button>
-                        <i class="fas fa-sign-in-alt"></i>
-                        Вход
-                    </button>
-                    <button>
-                        <i class="fas fa-user-plus"></i>
-                        Регистрация
-                    </button>
+                    <ul>
+                        <li>
+                            <router-link to="/login">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Вход
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/register">
+                                <i class="fas fa-user-plus"></i>
+                                Регистрация
+                            </router-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <!-- theme component  -->
-            <Theme/>
+            <Theme />
         </div>
         <!-- aside component  -->
         <div class="aside">

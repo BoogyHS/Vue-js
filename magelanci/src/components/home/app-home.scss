@@ -10,8 +10,13 @@ main {
     justify-content: space-between;
 }
 
-/* welcome component */
+.main-width {
+    margin: 0;
+    padding: 0;
+    flex-basis: 70%;
+}
 
+/* welcome component */
 .welcome {
     padding: 0.3em 0.5em;
     border: 1px solid;
@@ -32,12 +37,24 @@ main {
     border-bottom: 1px solid;
 }
 
-.welcome button {
+.welcome a {
+    color: white;
+    text-decoration: none;
     background-color: #4ebced;
     border: none;
     border-radius: 0.3em;
     padding: 0.5em 5.2em;
     margin: 1em;
+}
+
+.welcome ul {
+    display: flex;
+    padding: 0;
+    margin: 1em;
+}
+
+.welcome li {
+    list-style: none;
 }
 
 /* aside  */
