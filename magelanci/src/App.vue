@@ -7,16 +7,14 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Footer from './components/core/footer/Footer.vue'
 import Header from './components/core/header/Header.vue'
+import Footer from './components/core/footer/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
+    Header,
     Footer,
-    Header
   }
 }
 </script>

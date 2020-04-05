@@ -1,0 +1,16 @@
+.path span+span:before {
+    content: '->';
+    padding: 1em;
+}
+
+.followers {
+    align-self: flex-start;
+}
+
+.path {
+    margin-top: 1em;
+    padding: 0.3em 0.5em;
+    border: 1px solid;
+    border-radius: 0.3em;
+    font-size: 0.8em;
+}
