@@ -10,35 +10,6 @@ main {
     justify-content: space-between;
 }
 
-
-/* title  */
-
-.theme-title {
-    margin: 0;
-    padding: 0;
-    flex-basis: 70%;
-}
-
-.theme-title * {
-    margin: 0;
-    padding: 0;
-}
-
-.theme-title p {
-    font-style: normal;
-}
-
-.theme-name-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3em 0.5em;
-    border: 1px solid;
-    border-radius: 0.3em;
-    font-size: 0.8em;
-    margin-top: 1em;
-}
-
 /* welcome component */
 
 .welcome {
