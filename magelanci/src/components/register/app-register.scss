@@ -60,3 +60,15 @@ a {
 form .field {
     display: flex;
 }
+
+p.error {
+    text-align: left;
+    background-color: #f8d7da;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    margin-bottom: 1em;
+}
+
+input.error {
+    border-left-color: #f73434;
+}

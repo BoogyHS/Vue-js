@@ -57,3 +57,8 @@ npm install -g vue-generate-component
 ```
 vgc {ComponentName}
 ```
+
+### Installing validation library - Vuelidate
+```
+npm install vuelidate
+```
