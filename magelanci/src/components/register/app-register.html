@@ -27,7 +27,7 @@
             type="email" 
             name="email" 
             id="email" 
-            v-bind:class="{error: !$v.email.required || !$v.email.email}"
+            v-bind:class="{error: (!$v.email.required || !$v.email.email)}"
             placeholder="pesho@gmail.com"
             v-model="email">
         </p>
@@ -65,7 +65,7 @@
             type="password" 
             name="password" 
             id="password"
-            v-bind:class="{error: !$v.password.required || !$v.password.minLength}"
+            v-bind:class="{error: (!$v.password.required || !$v.password.minLength)}"
             placeholder="******"
             v-model="password">
         </p>

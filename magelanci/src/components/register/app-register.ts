@@ -31,7 +31,7 @@ export default {
   methods: {
     submitHandler(){
       (this as any).$v.$touch();
-      console.log((this as any).$v);
+      // console.log((this as any).$v);
     }
   },
 }
