@@ -1,0 +1,41 @@
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-title {
+    width: 100%;
+}
+
+.comment {
+    margin-top: 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+    width: 100%;
+    padding: 1em;
+}
+
+.comment header p {
+    padding: 0.3em;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px dashed;
+}
+
+.userdetails img {
+    height: 10%;
+    width: 10%;
+    border: 1px solid;
+}
+
+.footer {
+    border-top: 1px dashed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer i {
+    background-color: #ffffff;
+    border: none;
+}
