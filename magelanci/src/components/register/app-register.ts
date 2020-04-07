@@ -1,4 +1,5 @@
 import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
+import authAxios from "@/axios-auth";
 
 export default {
   name: 'Register',
@@ -18,7 +19,7 @@ export default {
     },
     email: {
       required,
-      email:email
+      email: email
     },
     password: {
       required,
@@ -29,9 +30,30 @@ export default {
     }
   },
   methods: {
-    submitHandler(){
+    onRegister() {
       (this as any).$v.$touch();
-      // console.log((this as any).$v);
+      const payload = {
+        email: (this as any).email,
+        password: (this as any).password,
+        username: (this as any).username,
+        tel: (this as any).selectedCode + (this as any).tel,
+        returnSecureToken: true
+      };
+      // Project Settings -> Web API key
+      authAxios
+        .post(
+          "/accounts:signUp",
+          payload
+        )
+        .then((res: any) => {
+          const { idToken, localId } = res.data;
+          localStorage.setItem('token', idToken);
+          localStorage.setItem('userId', localId);
+          (this as any).$router.push('/');
+        })
+        .catch((err: any) => {
+          console.error(err);
+        });
     }
-  },
+  }
 }

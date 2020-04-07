@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Header/>
-    <router-view></router-view>
+    <Header @onAuth="isAuth = $event" :isAuth="isAuth"/>
+    <router-view @onAuth="isAuth = $event" :isAuth="isAuth"></router-view>
     <Footer/>
   </div>
 </template>
@@ -15,6 +15,11 @@ export default {
   components: {
     Header,
     Footer,
+  },
+  data: function() {
+    return {
+      isAuth: localStorage.getItem('token') !== null
+    }
   },
 }
 </script>

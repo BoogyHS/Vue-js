@@ -62,3 +62,8 @@ vgc {ComponentName}
 ```
 npm install vuelidate
 ```
+
+### Installing axios library
+```
+npm install axios
+```

@@ -3,7 +3,7 @@
     <main>
         <div class="main-width">
             <!-- welcome component -->
-            <div class="welcome">
+            <div class="welcome" @onAuth="isAuth = $event" v-if="!isAuth">
                 <h3>Добре дошли!</h3>
                 <p>Magelanci.com е общество на хора, завладени от магията на пътешествията. От първоначалната тръпка
                     до самолетния билет, планирането и самото пътуване – ние сме тук да си помагаме, споделяме и
