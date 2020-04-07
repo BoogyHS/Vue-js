@@ -7,7 +7,6 @@ export default {
     return {
       email: '',
       password: '',
-      // error:false
     }
   },
   validations: {
@@ -28,7 +27,6 @@ export default {
         password: (this as any).password,
         returnSecureToken: true
       };
-      // Project Settings -> Web API key
       authAxios
         .post(
           '/accounts:signInWithPassword',

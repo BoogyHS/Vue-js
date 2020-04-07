@@ -39,7 +39,6 @@ export default {
         tel: (this as any).selectedCode + (this as any).tel,
         returnSecureToken: true
       };
-      // Project Settings -> Web API key
       authAxios
         .post(
           "/accounts:signUp",
