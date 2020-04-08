@@ -20,6 +20,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/newtheme',
+    name: 'NewTheme',
+    component: () => import('../components/newTheme/NewTheme.vue')
+  },
+  {
     path: '/register',
     name: 'Register',
     component: () => import('../components/register/Register.vue')

@@ -1,4 +1,18 @@
-.path span+span:before {
+ul {
+    display: flex;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.path li+li:before {
     content: '->';
     padding: 1em;
 }
@@ -12,5 +26,7 @@
     padding: 0.3em 0.5em;
     border: 1px solid;
     border-radius: 0.3em;
-    font-size: 0.8em;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
 }
