@@ -33,6 +33,7 @@ export default {
           payload
         )
         .then(res => {
+         
           const { idToken, localId } = res.data;
           localStorage.setItem("token", idToken);
           localStorage.setItem("userId", localId);

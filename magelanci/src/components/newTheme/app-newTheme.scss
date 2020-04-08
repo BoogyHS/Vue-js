@@ -1,3 +1,18 @@
+label {
+    margin-bottom: 0.3em;
+    font-size: 1.2em;
+}
+
+button {
+    padding: 0.4em 1.5em;
+    border: 1px solid #333333;
+    border-radius: 0.3em;
+}
+
+button + button {
+    margin-left: 1em;
+}
+
 .input {
     margin-bottom: 1em;
 }
@@ -43,10 +58,6 @@
     margin: 0;
 }
 
-label {
-    margin-bottom: 0.3em;
-}
-
 .title input {
     width: 55%;
     border-radius: 0.3em;
@@ -63,12 +74,7 @@ label {
     color: #fff;
 }
 
-button {
-    padding: 0.4em 1.5em;
-    border: 1px solid #333333;
-    border-radius: 0.3em;
-}
-
-button + button {
-    margin-left: 1em;
+.required {
+    font-size: 0.8em;
+    color: red;
 }
