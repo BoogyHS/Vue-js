@@ -2,7 +2,7 @@
 export default {
     name: 'Theme',
     components: {},
-    props: [],
+    props: ['theme'],
     data () {
       return {
   
@@ -12,6 +12,6 @@ export default {
   
     },
     methods: {
-  
+     
     }
   }

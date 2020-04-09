@@ -26,10 +26,15 @@
                 </div>
             </div>
             <!-- theme component  -->
-            <router-link to="/themecontent" class="normal">
-                <Theme />
-            </router-link>
-            <p v-for="t in themes" :key="t.themeId"></p>
+            <template v-for="theme in themes">
+                <router-link to="/themecontent" class="normal">
+                    <Theme 
+                    v-bind:key="theme.themeId"
+                    v-bind:theme="theme"
+                    />
+                </router-link>
+            </template>
+            <!-- <p v-for="t in themes" :key="t.themeId"></p> -->
         </div>
         <!-- aside component  -->
         <div class="aside">
