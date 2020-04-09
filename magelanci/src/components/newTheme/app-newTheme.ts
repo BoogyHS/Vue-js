@@ -1,10 +1,13 @@
 import { required } from 'vuelidate/lib/validators'
 import newThemeMixin from '@/mixins/new-theme-mixin';
 import INewTheme from '@/interfaces/new-theme'
+import { VueEditor } from 'vue2-editor';
 
 export default {
   name: 'NewTheme',
-  components: {},
+  components: {
+    VueEditor,
+  },
   props: [],
   data() {
     return {

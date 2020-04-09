@@ -19,12 +19,16 @@
             </div>
             <div class="content">
                 <label for="content">Съдържание <span class="required">*задължително</span></label>
-                <textarea 
+                <!-- <textarea 
                 type="text" 
                 name="content" 
                 id="content" 
                 class="height"
-                v-model="content"></textarea>
+                v-model="content"></textarea> -->
+                <vue-editor 
+                class="editor"
+                v-model="content"
+                ></vue-editor>
                 <template v-if="$v.content.$error">
                     <p class="error" v-if="!$v.content.required">
                         Content is required!

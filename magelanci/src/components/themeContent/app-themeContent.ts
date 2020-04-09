@@ -9,7 +9,7 @@ export default {
     myPath,
     Theme,
     Comment,
-    VueEditor
+    VueEditor,
   },
   props: [],
   data() {
