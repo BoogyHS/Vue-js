@@ -1,5 +1,5 @@
 import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
-import authAxios from "@/axios-auth";
+import authAxios from "@/axios/axios-auth";
 
 export default {
   name: 'Register',
@@ -45,9 +45,10 @@ export default {
           payload
         )
         .then((res: any) => {
-          const { idToken, localId } = res.data;
+          const { idToken, localId, email } = res.data;
           localStorage.setItem('token', idToken);
           localStorage.setItem('userId', localId);
+          localStorage.setItem("email", email);
           (this as any).$router.push('/');
         })
         .catch((err: any) => {

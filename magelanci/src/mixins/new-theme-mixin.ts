@@ -1,4 +1,4 @@
-import axiosDb from '@/axios-database';
+import axiosDb from '@/axios/axios-database';
 
 export default {
     data: function () {

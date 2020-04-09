@@ -1,5 +1,6 @@
 import { required } from 'vuelidate/lib/validators'
 import newThemeMixin from '@/mixins/new-theme-mixin';
+import INewTheme from '@/interfaces/new-theme'
 
 export default {
   name: 'NewTheme',
@@ -24,14 +25,20 @@ export default {
   methods: {
     publish() {
       (this as any).$v.$touch();
-      const payload = {
+      const payload: INewTheme = {
         title: (this as any).title,
         content: (this as any).content,
+        user: localStorage.getItem('email'),
+        followers: 0,
+        date: new Date().toISOString(),
+        comments: [{
+          user: localStorage.getItem('email'),
+          content: (this as any).content,
+        }]
       };
       (this as any).postTheme(payload)
       .then((res: any)=>{
-
-        console.log(res);
+        (this as any).$router.push('/');
       })
 
     },
