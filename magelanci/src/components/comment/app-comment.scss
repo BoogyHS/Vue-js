@@ -53,13 +53,13 @@
 }
 
 .footer {
+    color: rgb(0, 128, 182);
     font-size: 1.5em;
-    border-top: 1px dashed;
+    border-top: 1px dashed black;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0.5em 0.5em 0 0;
-    color: rgb(0, 128, 182);
 }
 
 .footer i {

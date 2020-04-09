@@ -24,3 +24,35 @@ main {
 .theme-title {
     width: 100%;
 }
+
+// answer-comment
+
+.answer-comment {
+    width: 100%;
+    display: flex;
+    margin-top: 1em;
+}
+
+.answer-comment p {
+    flex-basis: 15%;
+}
+
+.answer {
+    border: 1px solid;
+    border-radius: 0.3em;
+    flex-basis: 85%;
+    text-align: center;
+}
+
+.answer button {
+    background-color: #333333;
+    color: white;
+    margin: 0.5em 1em;
+    padding: 0.2em 1em;
+    border: 1px solid;
+    border-radius: 0.3em;
+}
+
+.answer button:hover {
+    cursor: pointer;
+}

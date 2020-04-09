@@ -67,3 +67,8 @@ npm install vuelidate
 ```
 npm install axios
 ```
+
+### Installing Vue2-Editor
+```
+npm i vue2-editor
+```
