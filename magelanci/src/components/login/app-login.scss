@@ -40,6 +40,10 @@ button {
     width: 60%;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 i {
     border: 1px solid;
     border-right: none;

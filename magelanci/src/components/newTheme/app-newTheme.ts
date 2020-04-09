@@ -27,13 +27,14 @@ export default {
       (this as any).$v.$touch();
       const payload: INewTheme = {
         title: (this as any).title,
-        content: (this as any).content,
         user: localStorage.getItem('email'),
         followers: 0,
         date: new Date().toISOString(),
         comments: [{
           user: localStorage.getItem('email'),
           content: (this as any).content,
+          date: new Date().toISOString(),
+          likes: 0,
         }]
       };
       (this as any).postTheme(payload)
