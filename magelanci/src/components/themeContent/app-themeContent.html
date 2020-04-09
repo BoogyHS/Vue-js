@@ -8,13 +8,15 @@
             <Theme />
         </div>
         <!-- comment component  -->
-        <Comment/>
+        <Comment />
 
         <div class="answer-comment">
             <p>username</p>
             <div class="answer">
-                <vue-editor class="editor"></vue-editor>
-                <button>Публикувай</button>
+                <form @submit.prevent="publishComment">
+                    <vue-editor class="editor" v-model="content"></vue-editor>
+                    <button>Публикувай</button>
+                </form>
             </div>
         </div>
     </main>

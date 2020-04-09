@@ -7,11 +7,11 @@ export default {
         }
     },
     methods: {
-        async postTheme(payload: {}) {
+        async postComment(payload: {}, id: string) {
             try {
-                const res = await axiosDb.post(`themes.json`, payload);
-                (this as any).postedThemeId = res.data.name;
-                // console.log(posted);
+                const res = await axiosDb.post(`themes/${id}/comments.json`, payload);
+                const posted = res.data.name;
+                console.log(posted);
 
             } catch (err) {
                 console.log(err);
