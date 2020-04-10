@@ -19,6 +19,7 @@ header {
     border-radius: 0.3em;
     flex-basis: 80%;
     padding: 1em;
+    width: 100%;
 }
 
 .comment p {
@@ -26,14 +27,19 @@ header {
 }
 
 .comment header p {
-    padding: 0.3em;
+    // padding: 0.3em;
     text-align: center;
-    background-color: #ffffff;
+    // background-color: #ffffff;
     margin-right: 0;
 }
 
 .content {
     flex: 0 1 80%;
+    width: 100%;
+}
+
+.content p {
+    word-break: break-all;
 }
 
 .userdetails {
