@@ -1,4 +1,5 @@
-# my-app
+# Forum
+This project is a forum for people, who like to travel. For using the functionality, you need to register with email, username and password.
 
 ## Project setup
 ```
