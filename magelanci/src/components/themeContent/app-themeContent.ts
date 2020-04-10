@@ -5,6 +5,7 @@ import { required } from 'vuelidate/lib/validators'
 import { VueEditor } from 'vue2-editor';
 import newCommentMixin from '@/mixins/new-comment-mixin';
 import currentTheme from '@/mixins/theme-mixin';
+import IComment from '@/interfaces/comment';
 
 export default {
   name: 'ThemeContent',
@@ -59,7 +60,7 @@ export default {
       console.log(payload);
 
       (this as any).postComment(payload, themeId)
-        .then((res: any) => {
+        .then((res: IComment) => {
           // console.log(res);
           (this as any).content = null;
           (this as any).getTheme((this as any).id);

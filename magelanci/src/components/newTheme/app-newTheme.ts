@@ -44,12 +44,12 @@ export default {
         likes: 0,
       };
       (this as any).postTheme(payload)
-        .then((res: any) => {
-          (this as any).postComment(comment, (this as any).postedThemeId);
+        .then(() => {
+          
+        (this as any).postComment(comment, (this as any).postedThemeId);
 
-          (this as any).$router.push('/');
-        })
-
+        (this as any).$router.push('/');
+      })
     },
     clear() {
       console.log('clear');

@@ -5,7 +5,15 @@ import store from './store'
 import { Vuelidate } from 'vuelidate'
 
 Vue.filter('dateFormatter', function (str: string): string {
-  return str.split('T').join(' ').split('.')[0];
+  if(str){
+    if(str.includes('T')){
+      str = str.split('T').join(' ');
+      if(str.includes('.')){
+        str = str.split('.')[0];
+      }
+    }
+  }
+  return str;
 });
 
 Vue.use(Vuelidate)

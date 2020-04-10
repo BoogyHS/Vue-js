@@ -1,5 +1,7 @@
-import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, email, sameAs, integer } from 'vuelidate/lib/validators'
 import authAxios from "@/axios/axios-auth";
+import IRegister from '@/interfaces/registerDetails';
+import IRegistered from '@/interfaces/registered';
 
 export default {
   name: 'Register',
@@ -27,12 +29,17 @@ export default {
     },
     rePassword: {
       sameAs: sameAs('password')
-    }
+    },
+    // tel: {
+    //   minLength: minLength(9),
+    //   maxLength: maxLength(9),
+    //   integer
+    // }
   },
   methods: {
     onRegister() {
       (this as any).$v.$touch();
-      const payload = {
+      const payload: IRegister = {
         email: (this as any).email,
         password: (this as any).password,
         username: (this as any).username,
@@ -44,14 +51,14 @@ export default {
           "/accounts:signUp",
           payload
         )
-        .then((res: any) => {
+        .then((res: IRegistered) => {
           const { idToken, localId, email } = res.data;
           localStorage.setItem('token', idToken);
           localStorage.setItem('userId', localId);
           localStorage.setItem("email", email);
           (this as any).$router.push('/');
         })
-        .catch((err: any) => {
+        .catch((err: {}) => {
           console.error(err);
         });
     }
