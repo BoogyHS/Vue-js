@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 import { Vuelidate } from 'vuelidate'
 
+Vue.filter('dateFormatter', function (str: string): string {
+  return str.split('T').join(' ').split('.')[0];
+});
+
 Vue.use(Vuelidate)
 
 Vue.config.productionTip = false
