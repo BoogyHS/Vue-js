@@ -15,10 +15,12 @@ export default {
     (this as any).$emit('onAuth', localStorage.getItem('token') !== null);
   },
   created() {
-    (this as any).getAllThemes();
+    if(localStorage.getItem('token') !== null){
+      (this as any).getAllThemes();
+    }
   },
-  mounted() {
-    console.log((this as any).themes)
-  },
+  // mounted() {
+  //   console.log((this as any).themes)
+  // },
   mixins: [themesMixin]
 }

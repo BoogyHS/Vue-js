@@ -1,17 +1,20 @@
 
 export default {
-    name: 'myPath',
-    components: {},
-    props: [],
-    data () {
-      return {
-  
-      }
-    },
-    computed: {
-  
-    },
-    methods: {
-  
+  name: 'myPath',
+  components: {},
+  props: ['isAuth'],
+  data() {
+    return {
+      
     }
+  },
+  computed: {
+
+  },
+  methods: {
+
+  },
+  watch: {
+    
   }
+}

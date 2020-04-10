@@ -4,6 +4,14 @@ import Home from '../components/home/Home.vue'
 
 Vue.use(VueRouter)
 
+const checkAuth = (to: any, from: any, next: any) => {
+  if (localStorage.getItem('token') !== null) {
+    next();
+  } else {
+    next('/login')
+  }
+}
+
 const routes = [
   {
     path: '/',
@@ -17,17 +25,20 @@ const routes = [
   {
     path: '/forum',
     name: 'Forum',
-    component: Home
+    component: Home,
+    beforeEnter: checkAuth,
   },
   {
     path: '/newtheme',
     name: 'NewTheme',
-    component: () => import('../components/newTheme/NewTheme.vue')
+    component: () => import('../components/newTheme/NewTheme.vue'),
+    beforeEnter: checkAuth,
   },
   {
     path: '/themecontent/:title',
     name: 'themeContent',
-    component: () => import('../components/themeContent/ThemeContent.vue')
+    component: () => import('../components/themeContent/ThemeContent.vue'),
+    beforeEnter: checkAuth,
   },
   {
     path: '/register',
@@ -39,14 +50,11 @@ const routes = [
     name: 'Login',
     component: () => import('../components/login/Login.vue')
   },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import('../components/not-found/NotFound.vue')
+  },
 ]
 
 const router = new VueRouter({

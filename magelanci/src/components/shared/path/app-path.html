@@ -3,10 +3,9 @@
     <li>Начало</li>
     <li>Форум</li>
   </ul>
-  <ul>
+  <ul v-if="isAuth">
     <li>
-      
-      <router-link to="/newtheme">
+      <router-link to="/newtheme" >
         <i class="fas fa-plus"></i>
         Нова тема
       </router-link>
