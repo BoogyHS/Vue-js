@@ -5,13 +5,19 @@
     <main>
         <div class="theme-title">
             <!-- theme component  -->
-            <Theme />
+            <Theme v-bind:theme="theme" />
+
         </div>
         <!-- comment component  -->
-        <Comment />
+        <template v-for="comment in theme.comments">
+            <Comment 
+            v-bind:comment="comment"
+            v-bind:key="comment.name"
+            />
+        </template>
 
         <div class="answer-comment">
-            <p>username</p>
+            <p><span>{{currentUser}}</span> comment:</p>
             <div class="answer">
                 <form @submit.prevent="publishComment">
                     <vue-editor class="editor" v-model="content"></vue-editor>

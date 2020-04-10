@@ -2,12 +2,11 @@
 export default {
   name: 'Comment',
   components: {
-   
+
   },
-  props: [],
+  props: ['comment'],
   data() {
     return {
-
     }
   },
   computed: {

@@ -4,6 +4,7 @@ import Comment from '../comment/Comment.vue'
 import { required } from 'vuelidate/lib/validators'
 import { VueEditor } from 'vue2-editor';
 import newCommentMixin from '@/mixins/new-comment-mixin';
+import currentTheme from '@/mixins/theme-mixin';
 
 export default {
   name: 'ThemeContent',
@@ -16,7 +17,11 @@ export default {
   props: [],
   data() {
     return {
-      content: '',
+      content: null,
+      id: (this as any).$route.params.id,
+      theme: {},
+      currentUser: localStorage.getItem('email'),
+      comments: [],
     }
   },
   validations: {
@@ -24,17 +29,25 @@ export default {
       required,
     },
   },
+  created(){
+    (this as any).getTheme((this as any).id);
+    // console.log((this as any).theme);
+  },
+  mounted() {
+    (this as any).getTheme((this as any).id);
+    // console.log((this as any).theme);
+  },
   computed: {
+
+  },
+  watch: {
 
   },
   methods: {
     publishComment() {
       (this as any).$v.$touch();
 
-
-      //TODO themeID to be dinnamic
-      const themeId = '-M4VWY77CEng8jn9Yp2v';
-
+      const themeId = (this as any).id;
 
       const payload: any = {
         user: localStorage.getItem('email'),
@@ -57,6 +70,6 @@ export default {
     //   console.log('clear');
     // }
 
-  }  ,
-  mixins: [newCommentMixin]
+  },
+  mixins: [newCommentMixin, currentTheme]
 }

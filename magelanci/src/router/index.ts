@@ -25,7 +25,7 @@ const routes = [
     component: () => import('../components/newTheme/NewTheme.vue')
   },
   {
-    path: '/themecontent',
+    path: '/themecontent/:title',
     name: 'themeContent',
     component: () => import('../components/themeContent/ThemeContent.vue')
   },

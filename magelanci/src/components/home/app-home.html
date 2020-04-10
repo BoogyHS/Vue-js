@@ -27,7 +27,7 @@
             </div>
             <!-- theme component  -->
             <template v-for="theme in themes">
-                <router-link to="/themecontent" class="normal">
+                <router-link :to="{name: 'themeContent', params:{ title:theme.title, id:theme.themeId }}" class="normal">
                     <Theme 
                     v-bind:key="theme.themeId"
                     v-bind:theme="theme"

@@ -1,24 +1,22 @@
 <div class="comment">
     <header>
-        <p>Публикувано - дата</p>
+        <p>{{comment.date}}</p>
     </header>
     <div class="main">
         <div class="userdetails">
-            <span>nickname</span>
+            <span>{{comment.user}}</span>
             <div>
                 <img src="../../assets/user.png" alt="usericon">
             </div>
         </div>
         <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere sint dolorem quam,
-                accusantium ipsa veniam laudantium inventore aut, tenetur quibusdam doloribus. Incidunt odio
-                nostrum facilis ipsum dolorem deserunt illum?</p>
+            <p v-html=comment.content></p>
         </div>
     </div>
     <div class="footer">
         <button>
             <i class="fas fa-thumbs-up"></i>
         </button>
-        <p>555 likes</p>
+        <p>{{comment.likes}} likes</p>
     </div>
 </div>

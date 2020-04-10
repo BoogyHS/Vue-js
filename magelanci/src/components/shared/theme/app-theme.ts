@@ -5,7 +5,7 @@ export default {
     props: ['theme'],
     data () {
       return {
-  
+
       }
     },
     computed: {

@@ -29,12 +29,18 @@ main {
 
 .answer-comment {
     width: 100%;
-    display: flex;
+    // display: flex;
     margin-top: 1em;
 }
 
 .answer-comment p {
     flex-basis: 15%;
+    padding-bottom: 0.3em;
+}
+
+.answer-comment p span {
+    color: blue;
+    font-size: 1.2em;
 }
 
 .answer {
