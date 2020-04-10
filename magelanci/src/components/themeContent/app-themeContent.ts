@@ -60,9 +60,9 @@ export default {
 
       (this as any).postComment(payload, themeId)
         .then((res: any) => {
-          console.log(res);
-
-          // (this as any).$router.push('/');
+          // console.log(res);
+          (this as any).content = null;
+          (this as any).getTheme((this as any).id);
         })
 
     },
