@@ -9,10 +9,12 @@
 
         </div>
         <!-- comment component  -->
-        <template v-for="comment in theme.comments">
+        <template v-for="(comment, index) in theme.comments">
             <Comment 
             v-bind:comment="comment"
             v-bind:key="comment.name"
+            v-bind:themeId="id"
+            v-bind:commentId="index"
             />
         </template>
 
