@@ -15,12 +15,15 @@ export default {
   },
   methods: {
     like() {
-      const obj = (this as any).comment;
-      obj.likes+=1;
-      // console.log((this as any).commentId);
-      
-      (this as any).addLike((this as any).themeId, (this as any).commentId, obj);
+      if ((this as any).comment.user !== localStorage.getItem('email')) {
+        const obj = (this as any).comment;
+        obj.likes += 1;
+        // console.log((this as any).commentId);
 
+        (this as any).addLike((this as any).themeId, (this as any).commentId, obj);
+      } else {
+        return;
+      }
     }
   },
   mixins: [addLikeMixin],
