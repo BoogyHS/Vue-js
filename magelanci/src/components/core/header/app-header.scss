@@ -6,6 +6,12 @@ header {
 ul {
     padding: 0;
     display: flex;
+    align-items: center;
+}
+
+ul span {
+    color: white;
+    padding: 0.5em;
 }
 
 .mini-navbar ul {

@@ -5,7 +5,8 @@ import themesMixin from '@/mixins/themes-mixin';
 export default {
   name: 'Home',
   props: {
-    isAuth: Boolean
+    isAuth: Boolean,
+    isUsername: String
   },
   components: {
     myPath,
@@ -13,6 +14,7 @@ export default {
   },
   beforeCreate() {
     (this as any).$emit('onAuth', localStorage.getItem('token') !== null);
+    (this as any).$emit('onUsername', localStorage.getItem('email'));
   },
   created() {
     if(localStorage.getItem('token') !== null){
