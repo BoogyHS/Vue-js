@@ -35,7 +35,7 @@ const routes = [
     beforeEnter: checkAuth,
   },
   {
-    path: '/user',
+    path: '/userdetails',
     name: 'User',
     component: () => import('../components/user/User.vue'),
     beforeEnter: checkAuth,

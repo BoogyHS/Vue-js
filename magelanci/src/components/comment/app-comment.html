@@ -1,6 +1,10 @@
 <div class="comment">
     <header>
-        <div>{{comment.user}}</div>
+        <div>
+            <router-link :to="{name: 'User', params:{ username:comment.user }}">
+                {{comment.user}}
+            </router-link>
+        </div>
         <p>Time: {{comment.date | dateFormatter}}</p>
     </header>
     <div class="main">
