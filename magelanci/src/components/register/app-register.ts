@@ -1,10 +1,11 @@
+import Vue from 'vue'
 import { required, minLength, maxLength, email, sameAs, integer } from 'vuelidate/lib/validators'
 import authAxios from "@/axios/axios-auth";
 import IRegister from '@/interfaces/registerDetails';
 import IRegistered from '@/interfaces/registered';
 import newUser from '@/mixins/new-user';
 
-export default {
+export default Vue.extend({
   name: 'Register',
   data() {
     return {
@@ -39,12 +40,12 @@ export default {
   },
   methods: {
     onRegister() {
-      (this as any).$v.$touch();
+      this.$v.$touch();
       const payload: IRegister = {
-        email: (this as any).email,
-        password: (this as any).password,
-        username: (this as any).username,
-        tel: (this as any).selectedCode + (this as any).tel,
+        email: this.email,
+        password: this.password,
+        username: this.username,
+        tel: Number(this.selectedCode + this.tel),
         returnSecureToken: true
       };
       authAxios
@@ -62,7 +63,7 @@ export default {
           delete payload.returnSecureToken;
           (this as any).postUser(payload)
             .then(() => {
-              (this as any).$router.push('/');
+              this.$router.push('/');
             })
         })
         .catch((err: {}) => {
@@ -71,4 +72,4 @@ export default {
     }
   },
   mixins: [newUser]
-}
+})

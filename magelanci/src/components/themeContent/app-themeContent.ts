@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import myPath from '../shared/path/myPath.vue'
 import Theme from '../shared/theme/Theme.vue'
 import Comment from '../comment/Comment.vue'
@@ -7,7 +8,7 @@ import newCommentMixin from '@/mixins/new-comment-mixin';
 import currentTheme from '@/mixins/theme-mixin';
 import IComment from '@/interfaces/comment';
 
-export default {
+export default Vue.extend({
   name: 'ThemeContent',
   components: {
     myPath,
@@ -19,7 +20,7 @@ export default {
   data() {
     return {
       content: null,
-      id: (this as any).$route.params.id,
+      id: this.$route.params.id,
       theme: {},
       currentUser: localStorage.getItem('email'),
       comments: [],
@@ -31,11 +32,11 @@ export default {
     },
   },
   created(){
-    (this as any).getTheme((this as any).id);
+    (this as any).getTheme(this.id);
     // console.log((this as any).theme);
   },
   mounted() {
-    (this as any).getTheme((this as any).id);
+    (this as any).getTheme(this.id);
     // console.log((this as any).theme);
   },
   computed: {
@@ -46,9 +47,9 @@ export default {
   },
   methods: {
     publishComment() {
-      (this as any).$v.$touch();
+      this.$v.$touch();
 
-      const themeId = (this as any).id;
+      const themeId = this.id;
 
       const payload: any = {
         user: localStorage.getItem('email'),
@@ -62,8 +63,8 @@ export default {
       (this as any).postComment(payload, themeId)
         .then((res: IComment) => {
           // console.log(res);
-          (this as any).content = null;
-          (this as any).getTheme((this as any).id);
+          this.content = null;
+          (this as any).getTheme(this.id);
         })
 
     },
@@ -73,4 +74,4 @@ export default {
 
   },
   mixins: [newCommentMixin, currentTheme]
-}
+})

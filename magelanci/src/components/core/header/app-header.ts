@@ -1,5 +1,6 @@
+import Vue from 'vue'
 
-export default {
+export default Vue.extend({
   name: 'Header',
   components: {},
   data() {
@@ -8,13 +9,13 @@ export default {
   },
   props: ['isAuth', 'isUsername'],
   methods: {
-    onLogout() {
+    onLogout(): void {
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
       localStorage.removeItem('email');
-      (this as any).$emit('onAuth', false);
-      (this as any).$emit('onUsername', null);
+      this.$emit('onAuth', false);
+      this.$emit('onUsername', null);
     }
   },
  
-}
+})

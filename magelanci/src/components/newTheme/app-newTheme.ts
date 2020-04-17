@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import { required } from 'vuelidate/lib/validators'
 import newThemeMixin from '@/mixins/new-theme-mixin';
 import newCommentMixin from '@/mixins/new-comment-mixin';
@@ -5,7 +6,7 @@ import INewTheme from '@/interfaces/new-theme'
 import { VueEditor } from 'vue2-editor';
 import IComment from '@/interfaces/comment';
 
-export default {
+export default Vue.extend({
   name: 'NewTheme',
   components: {
     VueEditor,
@@ -29,9 +30,9 @@ export default {
   },
   methods: {
     publish() {
-      (this as any).$v.$touch();
+      this.$v.$touch();
       const payload: INewTheme = {
-        title: (this as any).title,
+        title: this.title,
         user: localStorage.getItem('email'),
         followers: 0,
         date: new Date().toISOString(),
@@ -39,7 +40,7 @@ export default {
       };
       const comment: IComment = {
         user: localStorage.getItem('email'),
-        content: (this as any).content.replace('<p>', '').replace('</p>', ''),
+        content: this.content.replace('<p>', '').replace('</p>', ''),
         date: new Date().toISOString(),
         likes: 0,
       };
@@ -48,7 +49,7 @@ export default {
           
         (this as any).postComment(comment, (this as any).postedThemeId);
 
-        (this as any).$router.push('/');
+        this.$router.push('/');
       })
     },
     clear() {
@@ -56,4 +57,4 @@ export default {
     }
   },
   mixins: [newThemeMixin, newCommentMixin]
-}
+})

@@ -1,7 +1,8 @@
+import Vue from 'vue'
 import { required, minLength, email } from 'vuelidate/lib/validators'
 import authAxios from "@/axios/axios-auth";
 
-export default {
+export default Vue.extend({
   name: 'Login',
   data() {
     return {
@@ -23,8 +24,8 @@ export default {
     onLogin() {
       (this as any).$v.$touch();
       const payload = {
-        email: (this as any).email,
-        password: (this as any).password,
+        email: this.email,
+        password: this.password,
         returnSecureToken: true
       };
       authAxios
@@ -33,17 +34,17 @@ export default {
           payload
         )
         .then(res => {
-         
+
           const { idToken, localId, email } = res.data;
-          
+
           localStorage.setItem('token', idToken);
           localStorage.setItem('userId', localId);
           localStorage.setItem('email', email);
-          (this as any).$router.push('/');
+          this.$router.push('/');
         })
         .catch(err => {
           console.error(err);
         });
     }
   }
-}
+})
