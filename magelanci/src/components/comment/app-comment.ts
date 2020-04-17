@@ -7,6 +7,7 @@ export default Vue.extend({
 
   },
   props: ['comment', 'themeId', 'commentId'],
+  mixins: [addLikeMixin],
   data() {
     return {
     }
@@ -17,15 +18,14 @@ export default Vue.extend({
   methods: {
     like(): void {
       if (this.comment.user !== localStorage.getItem('email')) {
-        const obj = (this as any).comment;
+        const obj = this.comment;
         obj.likes += 1;
-        // console.log((this as any).commentId);
+        // console.log(this);
 
         (this as any).addLike(this.themeId, this.commentId, obj);
       } else {
         return;
       }
     }
-  },
-  mixins: [addLikeMixin],
+  }
 })

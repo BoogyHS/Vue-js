@@ -17,6 +17,7 @@ export default Vue.extend({
     VueEditor,
   },
   props: [],
+  mixins: [newCommentMixin, currentTheme],
   data() {
     return {
       content: null,
@@ -72,6 +73,5 @@ export default Vue.extend({
     //   console.log('clear');
     // }
 
-  },
-  mixins: [newCommentMixin, currentTheme]
+  }
 })

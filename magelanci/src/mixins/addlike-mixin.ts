@@ -1,7 +1,8 @@
+import Vue from 'vue'
 import axiosDb from '@/axios/axios-database';
 
-export default {
-    data: function () {
+export default Vue.extend({
+    data: function (): {} {
         return {
 
         }
@@ -17,4 +18,4 @@ export default {
             }
         }
     }
-}
+})
