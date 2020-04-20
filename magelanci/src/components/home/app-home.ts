@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import myPath from '../shared/path/myPath.vue'
 import Theme from '../shared/theme/Theme.vue'
-import themesMixin from '@/mixins/themes-mixin';
 import { mapState } from 'vuex';
 import { userHelpers, themesHelpers } from '@/store';
 
@@ -14,9 +13,9 @@ export default Vue.extend({
     Theme,
   },
   created() {
-    // if (this.isAuth()) {
+    if (this.isAuth()) {
     this.getAllThemes();
-    // }
+    }
   },
   computed: {
     ...mapState('user', ['isAuth']),
@@ -25,7 +24,10 @@ export default Vue.extend({
     ])
   },
   methods: {
-    ...themesHelpers.mapActions(['getAllThemes'])
+    ...themesHelpers.mapActions(['getAllThemes']),
+    setCurrentTheme: function(theme: any){
+      localStorage.setItem('themeId', theme.themeId);
+      this.$store.commit('themes/setCurrentTheme', theme);      
+    }
   }
-  // mixins: [themesMixin]
 })

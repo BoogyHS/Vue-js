@@ -1,7 +1,8 @@
 <div class="container">
-    <myPath/>
+    <myPath />
     <main>
         <div class="main-width">
+            
             <!-- welcome component -->
             <div class="welcome">
                 <h3>Добре дошли!</h3>
@@ -25,17 +26,20 @@
                     </ul>
                 </div>
             </div>
+
             <!-- theme component  -->
             <template v-if="isAuth()">
                 <template v-for="theme in themes">
-                    <router-link :to="{name: 'themeContent', params:{ title:theme.title, id:theme.themeId }}"
-                        class="normal">
-                        <Theme v-bind:key="theme.themeId" v-bind:theme="theme" />
-                    </router-link>
+                    <div @click="setCurrentTheme(theme)">
+                        <router-link :to="{name: 'themeContent', params:{ title:theme.title, id:theme.themeId }}"
+                            class="normal">
+                            <Theme v-bind:key="theme.themeId" v-bind:theme="theme" />
+                        </router-link>
+                    </div>
                 </template>
             </template>
-            <!-- <p v-for="t in themes" :key="t.themeId"></p> -->
         </div>
+
         <!-- aside component  -->
         <div class="aside">
             <div class="title">

@@ -5,8 +5,9 @@ import Comment from '../comment/Comment.vue'
 import { required } from 'vuelidate/lib/validators'
 import { VueEditor } from 'vue2-editor';
 import newCommentMixin from '@/mixins/new-comment-mixin';
-import currentTheme from '@/mixins/theme-mixin';
+// import currentTheme from '@/mixins/theme-mixin';
 import IComment from '@/interfaces/comment';
+import { themesHelpers, userHelpers } from '@/store'
 
 export default Vue.extend({
   name: 'ThemeContent',
@@ -17,14 +18,13 @@ export default Vue.extend({
     VueEditor,
   },
   props: [],
-  mixins: [newCommentMixin, currentTheme],
+  mixins: [newCommentMixin,],
   data() {
     return {
       content: null,
       id: this.$route.params.id,
-      theme: {},
+      theme: this.$store.getters.currentTheme,
       currentUser: localStorage.getItem('email'),
-      comments: [],
     }
   },
   validations: {
@@ -32,21 +32,26 @@ export default Vue.extend({
       required,
     },
   },
-  created(){
-    (this as any).getTheme(this.id);
-    // console.log((this as any).theme);
-  },
-  mounted() {
-    (this as any).getTheme(this.id);
-    // console.log((this as any).theme);
+  created() {
+    this.getTheme(this.currentThemeId());
   },
   computed: {
+    // ...mapState('user', ['isAuth']),
+    ...userHelpers.mapState([
+      'isAuth',
+
+    ]),
+    ...themesHelpers.mapState([
+      'currentTheme',
+      'currentThemeId',
+    ]),
 
   },
   watch: {
 
   },
   methods: {
+    ...themesHelpers.mapActions(['getTheme']),
     publishComment() {
       this.$v.$touch();
 

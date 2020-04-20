@@ -3,19 +3,17 @@
     <!-- myPath component  -->
     <myPath />
     <main>
-        <div class="theme-title">
+        <div class="theme-title" v-if="currentTheme">
             <!-- theme component  -->
-            <Theme v-bind:theme="theme" />
-
+            <Theme v-bind:theme="currentTheme" />
         </div>
+
         <!-- comment component  -->
-        <template v-for="(comment, index) in theme.comments">
-            <Comment 
-            v-bind:comment="comment"
-            v-bind:key="comment.name"
-            v-bind:themeId="id"
-            v-bind:commentId="index"
-            />
+        <template v-if="currentTheme">
+            <template v-for="(comment, index) in currentTheme.comments">
+                <Comment v-bind:comment="comment" v-bind:key="comment.name" v-bind:themeId="id"
+                    v-bind:commentId="index" />
+            </template>
         </template>
 
         <div class="answer-comment">

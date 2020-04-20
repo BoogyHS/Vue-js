@@ -3,13 +3,17 @@ import axiosDb from '@/axios/axios-database';
 export default {
     namespaced: true,
     state: {
-        themes: []
+        themes: [],
+        currentTheme: null,
+        currentThemeId: ()=>{ return localStorage.getItem('themeId')},
     },
     getters: {
-
+        currentTheme: (state: any) => { return state.currentTheme }
     },
     mutations: {
-
+        setCurrentTheme(state: any, theme: any) {
+            state.currentTheme = theme;
+        }
     },
     actions: {
         async getAllThemes(context: any) {
@@ -26,6 +30,15 @@ export default {
 
                 }
                 context.state.themes = x.slice(0);
+            } catch (err) {
+                console.log(err);
+            }
+        },
+        async getTheme(context: any, id: any) {
+            try {
+                const res = await axiosDb.get(`themes/${id}.json`);
+                context.state.currentTheme = res.data;
+
             } catch (err) {
                 console.log(err);
             }
