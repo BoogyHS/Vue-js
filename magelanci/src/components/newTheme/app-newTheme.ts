@@ -29,7 +29,7 @@ export default Vue.extend({
   computed: {
   },
   methods: {
-    publish() {
+    publish(): void {
       this.$v.$touch();
       const payload: INewTheme = {
         title: this.title,

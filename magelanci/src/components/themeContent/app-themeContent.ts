@@ -20,7 +20,7 @@ export default Vue.extend({
   mixins: [newCommentMixin,],
   data() {
     return {
-      content: null,
+      content: '',
       id: this.$route.params.id,
       theme: this.$store.getters.currentTheme,
       currentUser: localStorage.getItem('email'),
@@ -56,14 +56,14 @@ export default Vue.extend({
 
       const payload: any = {
         user: localStorage.getItem('email'),
-        content: (this as any).content.replace('<p>', '').replace('</p>', ''),
+        content: this.content.replace('<p>', '').replace('</p>', ''),
         date: new Date().toISOString(),
         likes: 0
       };
 
       (this as any).postComment(payload, themeId)
         .then((res: IComment) => {
-          this.content = null;
+          this.content = '';
           (this as any).getTheme(this.id);
         })
     },

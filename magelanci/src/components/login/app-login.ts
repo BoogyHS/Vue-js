@@ -21,8 +21,8 @@ export default Vue.extend({
     },
   },
   methods: {
-    onLogin() {
-      (this as any).$v.$touch();
+    onLogin(): void {
+      this.$v.$touch();
       const payload = {
         email: this.email,
         password: this.password,
