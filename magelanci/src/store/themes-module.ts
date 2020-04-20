@@ -27,7 +27,6 @@ export default {
                         themeId,
                         ...allThemes[themeId]
                     });
-
                 }
                 context.state.themes = x.slice(0);
             } catch (err) {

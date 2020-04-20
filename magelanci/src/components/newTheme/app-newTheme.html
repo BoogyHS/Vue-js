@@ -19,12 +19,6 @@
             </div>
             <div class="content">
                 <label for="content">Съдържание <span class="required">*задължително</span></label>
-                <!-- <textarea 
-                type="text" 
-                name="content" 
-                id="content" 
-                class="height"
-                v-model="content"></textarea> -->
                 <vue-editor 
                 class="editor"
                 v-model="content"
@@ -39,7 +33,6 @@
                 <button class="cancel" @click.prevent="clear">Откажи</button>
                 <button class="public">Публикувай</button>
             </div>
-
         </form>
     </div>
 </div>

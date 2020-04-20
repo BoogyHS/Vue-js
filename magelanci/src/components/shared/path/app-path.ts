@@ -6,14 +6,11 @@ export default {
   props: [],
   data() {
     return {
-      
     }
   },
   computed: mapState('user',['isAuth']),
   methods: {
-
   },
   watch: {
-    
   }
 }

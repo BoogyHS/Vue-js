@@ -5,7 +5,6 @@ import IUser from '@/interfaces/user';
 export default Vue.extend({
   name: 'User',
   components: {
-
   },
   props: [],
   data() {
@@ -20,17 +19,11 @@ export default Vue.extend({
       this.userDetails = (this as any).users.find((x: IUser) => { return x.email === this.username })
     })
   },
-  mounted() {
-    // console.log((this as any).username);
-  },
   computed: {
-
   },
   watch: {
-
   },
   methods: {
-
   },
   mixins: [usersMixin]
 })

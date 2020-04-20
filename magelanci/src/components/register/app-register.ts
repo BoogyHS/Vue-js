@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { required, minLength, maxLength, email, sameAs, integer } from 'vuelidate/lib/validators'
+import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
 import authAxios from '@/axios/axios-auth';
 import IRegister from '@/interfaces/registerDetails';
 import IRegistered from '@/interfaces/registered';
@@ -31,12 +31,7 @@ export default Vue.extend({
     },
     rePassword: {
       sameAs: sameAs('password')
-    },
-    // tel: {
-    //   minLength: minLength(9),
-    //   maxLength: maxLength(9),
-    //   integer
-    // }
+    }
   },
   methods: {
     onRegister() {

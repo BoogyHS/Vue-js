@@ -11,8 +11,6 @@ export default {
             try {
                 const res = await axiosDb.post(`themes/${id}/comments.json`, payload);
                 const posted = res.data.name;
-                // console.log(posted);
-
             } catch (err) {
                 console.log(err);
             }

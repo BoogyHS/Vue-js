@@ -5,7 +5,6 @@ import Comment from '../comment/Comment.vue'
 import { required } from 'vuelidate/lib/validators'
 import { VueEditor } from 'vue2-editor';
 import newCommentMixin from '@/mixins/new-comment-mixin';
-// import currentTheme from '@/mixins/theme-mixin';
 import IComment from '@/interfaces/comment';
 import { themesHelpers, userHelpers } from '@/store'
 
@@ -36,7 +35,6 @@ export default Vue.extend({
     this.getTheme(this.currentThemeId());
   },
   computed: {
-    // ...mapState('user', ['isAuth']),
     ...userHelpers.mapState([
       'isAuth',
 
@@ -48,7 +46,6 @@ export default Vue.extend({
 
   },
   watch: {
-
   },
   methods: {
     ...themesHelpers.mapActions(['getTheme']),
@@ -61,22 +58,14 @@ export default Vue.extend({
         user: localStorage.getItem('email'),
         content: (this as any).content.replace('<p>', '').replace('</p>', ''),
         date: new Date().toISOString(),
-        likes: 0,
-
+        likes: 0
       };
-      console.log(payload);
 
       (this as any).postComment(payload, themeId)
         .then((res: IComment) => {
-          // console.log(res);
           this.content = null;
           (this as any).getTheme(this.id);
         })
-
     },
-    // clear() {
-    //   console.log('clear');
-    // }
-
   }
 })

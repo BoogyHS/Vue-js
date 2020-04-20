@@ -48,7 +48,7 @@
             id="select-tel" 
             class="tel"
             v-model="selectedCode">
-                <option value="+359">+359</option>
+                <option value="00359">+359</option>
             </select>
             <input 
             type="text" 
@@ -57,14 +57,6 @@
             placeholder="885 888 888"
             v-model="tel">
         </p>
-        <!-- <template v-if="$v.tel.$error">
-            <p class="error" v-if="!$v.tel.integer">
-                Telephone must contains only digits!
-            </p>
-            <p class="error" v-if="!$v.tel.minLength || !$v.tel.maxLength">
-                Telephone must contains 9 digits!
-            </p>
-        </template> -->
 
         <!-- password -->
         <p class="field field-icon">
