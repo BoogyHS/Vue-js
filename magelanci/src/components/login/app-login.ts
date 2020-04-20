@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { required, minLength, email } from 'vuelidate/lib/validators'
-import authAxios from "@/axios/axios-auth";
+import authAxios from '@/axios/axios-auth';
 
 export default Vue.extend({
   name: 'Login',
