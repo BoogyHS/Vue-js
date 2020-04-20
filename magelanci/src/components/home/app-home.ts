@@ -15,6 +15,7 @@ export default Vue.extend({
   created() {
     if(this.isAuth()){
       (this as any).getAllThemes();
+
     }
   },
   computed: mapState('user',['isAuth', 'isUsername']),

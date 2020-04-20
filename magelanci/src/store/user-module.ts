@@ -1,6 +1,5 @@
-
-
-export const user = {
+export default {
+    namespaced: true,
     state: {
         isAuth: () => { return !!localStorage.getItem('token') },
         isUsername: () => { return localStorage.getItem('email') }
