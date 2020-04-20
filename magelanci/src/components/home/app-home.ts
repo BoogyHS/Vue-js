@@ -3,6 +3,7 @@ import myPath from '../shared/path/myPath.vue'
 import Theme from '../shared/theme/Theme.vue'
 import themesMixin from '@/mixins/themes-mixin';
 import { mapState } from 'vuex';
+import { userHelpers, themesHelpers } from '@/store';
 
 export default Vue.extend({
   name: 'Home',
@@ -13,11 +14,18 @@ export default Vue.extend({
     Theme,
   },
   created() {
-    if(this.isAuth()){
-      (this as any).getAllThemes();
-
-    }
+    // if (this.isAuth()) {
+    this.getAllThemes();
+    // }
   },
-  computed: mapState('user',['isAuth', 'isUsername']),
-  mixins: [themesMixin]
+  computed: {
+    ...mapState('user', ['isAuth']),
+    ...themesHelpers.mapState([
+      'themes'
+    ])
+  },
+  methods: {
+    ...themesHelpers.mapActions(['getAllThemes'])
+  }
+  // mixins: [themesMixin]
 })
