@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { required, minLength, maxLength, email, sameAs, integer } from 'vuelidate/lib/validators'
-import authAxios from "@/axios/axios-auth";
+import authAxios from '@/axios/axios-auth';
 import IRegister from '@/interfaces/registerDetails';
 import IRegistered from '@/interfaces/registered';
 import newUser from '@/mixins/new-user';
@@ -50,19 +50,20 @@ export default Vue.extend({
       };
       authAxios
         .post(
-          "/accounts:signUp",
+          '/accounts:signUp',
           payload
         )
         .then((res: IRegistered) => {
           const { idToken, localId, email } = res.data;
           localStorage.setItem('token', idToken);
           localStorage.setItem('userId', localId);
-          localStorage.setItem("email", email);
+          localStorage.setItem('email', email);
 
           delete payload.password;
           delete payload.returnSecureToken;
           (this as any).postUser(payload)
             .then(() => {
+              this.$store.commit('onAuth');
               this.$router.push('/');
             })
         })

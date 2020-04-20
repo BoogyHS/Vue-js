@@ -1,4 +1,5 @@
 <div>
+  <h1>{{isAuth()}}</h1>
   <header>
     <div class="mini-navbar-wrap">
       <div class="logo-wrap">
@@ -6,16 +7,16 @@
       </div>
       <div class="mini-navbar">
         <ul>
-          <li v-if="!isAuth">
+          <li v-if="!isAuth()">
             <router-link to="/login">Вход</router-link>
           </li>
-          <li v-if="!isAuth">
+          <li v-if="!isAuth()">
             <router-link to="/register">Регистрация</router-link>
           </li>
-          <li v-if="isAuth">
+          <li v-if="isAuth()">
             <router-link  :to="{name: 'User', params:{ username:isUsername }}">{{isUsername}}</router-link>
           </li>
-          <li v-if="isAuth">
+          <li v-if="isAuth()">
             <a href="" @click="onLogout" >Изход</a>
           </li>
         </ul>
