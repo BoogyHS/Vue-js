@@ -7,16 +7,10 @@ import { mapState } from 'vuex';
 export default Vue.extend({
   name: 'Home',
   props: {
-    // isAuth: Boolean,
-    isUsername: String
   },
   components: {
     myPath,
     Theme,
-  },
-  beforeCreate() {
-    // this.$emit('onAuth', localStorage.getItem('token') !== null);
-    this.$emit('onUsername', localStorage.getItem('email'));
   },
   created() {
     if(this.isAuth()){
@@ -24,8 +18,5 @@ export default Vue.extend({
     }
   },
   computed: mapState(['isAuth']),
-  // mounted() {
-  //   console.log((this as any).themes)
-  // },
   mixins: [themesMixin]
 })

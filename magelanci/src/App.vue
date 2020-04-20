@@ -1,8 +1,6 @@
 <template>
   <div>
-    <Header 
-    @onUsername="isUsername = $event"  :isUsername = "isUsername"
-    />
+    <Header/>
     <router-view></router-view>
     <Footer/>
   </div>
@@ -20,8 +18,6 @@ export default {
   },
   data: function() {
     return {
-      // isAuth: localStorage.getItem('token') !== null,
-      isUsername: localStorage.getItem('email')
     }
   },
 }
