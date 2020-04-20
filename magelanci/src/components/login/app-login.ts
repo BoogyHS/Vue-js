@@ -40,7 +40,7 @@ export default Vue.extend({
           localStorage.setItem('token', idToken);
           localStorage.setItem('userId', localId);
           localStorage.setItem('email', email);
-          this.$store.commit('onAuth');
+          this.$store.commit('user/onAuth');
           this.$router.push('/');
         })
         .catch(err => {

@@ -18,6 +18,7 @@ export default {
                         ...allUsers[userId]
                     });
                 }
+                
             } catch (err) {
                 console.log(err);
             }

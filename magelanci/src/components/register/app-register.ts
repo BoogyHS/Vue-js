@@ -63,7 +63,7 @@ export default Vue.extend({
           delete payload.returnSecureToken;
           (this as any).postUser(payload)
             .then(() => {
-              this.$store.commit('onAuth');
+              this.$store.commit('user/onAuth');
               this.$router.push('/');
             })
         })

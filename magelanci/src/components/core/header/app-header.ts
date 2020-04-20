@@ -9,14 +9,15 @@ export default Vue.extend({
     }
   },
   props: [],
-  computed: mapState(['isAuth', 'isUsername']),
+  computed: mapState('user',['isAuth', 'isUsername']),
   methods: {
     onLogout(): void {
       localStorage.removeItem('token');
       localStorage.removeItem('userId');
       localStorage.removeItem('email');
-      this.$store.commit('onAuth');
-      this.$store.commit('isUsername');
+
+      this.$store.commit('user/onAuth');
+      this.$store.commit('user/onUsername');
     }
   },
 })

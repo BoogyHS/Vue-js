@@ -17,6 +17,6 @@ export default Vue.extend({
       (this as any).getAllThemes();
     }
   },
-  computed: mapState(['isAuth']),
+  computed: mapState('user',['isAuth', 'isUsername']),
   mixins: [themesMixin]
 })

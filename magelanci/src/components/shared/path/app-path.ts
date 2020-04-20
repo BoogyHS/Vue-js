@@ -1,16 +1,15 @@
+import { mapState } from 'vuex'
 
 export default {
   name: 'myPath',
   components: {},
-  props: ['isAuth'],
+  props: [],
   data() {
     return {
       
     }
   },
-  computed: {
-
-  },
+  computed: mapState('user',['isAuth']),
   methods: {
 
   },
